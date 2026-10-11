@@ -15,6 +15,7 @@ fed into downstream learners; the leaderboard updates automatically.
 |-------|---------|-----------|-----------|-----------|
 | un-CNN | NKI | 0.857 ± 0.032 | 5.11 ± 0.22 | 3.34 ± 0.21 |
 | SwinBrain | NKI | 0.855 ± 0.023 | 9.47 ± 0.54 | 4.18 ± 0.24 |
+| Dinov3D-neuro | NKI | 0.843 ± 0.045 | 6.26 ± 0.64 | 3.57 ± 0.25 |
 | 3D-Neuro-SimCLR | NKI | 0.835 ± 0.023 | 5.86 ± 0.58 | 3.83 ± 0.19 |
 | BrainIAC | NKI | 0.810 ± 0.031 | 13.96 ± 0.59 | 4.39 ± 0.30 |
 | FS aparc | NKI | 0.770 ± 0.023 | 9.09 ± 0.63 | 4.20 ± 0.26 |
@@ -26,6 +27,7 @@ fed into downstream learners; the leaderboard updates automatically.
 | AnatCL (Global) | NKI | 0.738 ± 0.031 | 6.26 ± 0.43 | 4.09 ± 0.20 |
 | BrainIAC | HBN | 0.737 ± 0.036 | 2.77 ± 0.21 | 3.71 ± 0.41 |
 | FS Schaefer | HBN | 0.734 ± 0.051 | 2.32 ± 0.17 | 3.51 ± 0.45 |
+| Dinov3D-neuro | HBN | 0.731 ± 0.046 | 1.72 ± 0.17 | 2.87 ± 0.29 |
 | FS aparc | HBN | 0.726 ± 0.042 | 2.16 ± 0.18 | 3.60 ± 0.48 |
 | AnatCL (Global) | HBN | 0.721 ± 0.062 | 1.91 ± 0.10 | 3.44 ± 0.40 |
 | AnatCL (Local) | HBN | 0.703 ± 0.055 | 1.91 ± 0.10 | 3.45 ± 0.43 |
