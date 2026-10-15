@@ -113,3 +113,23 @@ For each model / dataset / task, at the full training size:
 
 Dependencies are pinned (scikit-learn 1.7.1, numpy 2.4.2, pandas 2.2.3) so the
 leaderboard is reproducible run to run.
+
+## Citation
+
+If you use BrainFMBench, please cite the preprint for now:
+
+```bibtex
+@article{encin2026comparative,
+  title     = {A Comparative Evaluation of Structural MRI Foundation Models for Age, Sex, and Body-Mass Index Predictions},
+  author    = {Encin, Arel and Gilmore, Asa and Rokem, Ariel and Dickie, Erin and Glatard, Tristan},
+  journal   = {bioRxiv},
+  pages     = {2026.05.15.725427},
+  year      = {2026},
+  publisher = {Cold Spring Harbor Laboratory},
+  doi       = {10.64898/2026.05.15.725427}
+}
+```
+
+The paper was presented at the MedAGI workshop at MICCAI 2026
+([paper page](https://papers.miccai.org/miccai-2026-sat/MedAGI_025.html)).
+Once the proceedings are published, please cite the MICCAI version instead.
