@@ -9,7 +9,9 @@ fed into downstream learners; the leaderboard updates automatically.
 
 <!-- LEADERBOARD:START -->
 
-![Leaderboard boxplots](leaderboard_boxplots.png)
+[![Leaderboard boxplots](leaderboard_boxplots.png)](https://epics-lab.github.io/BrainFMBench/)
+
+**[Interactive version](https://epics-lab.github.io/BrainFMBench/)**
 
 | Model | Dataset | Sex (acc) | Age (MAE) | BMI (MAE) |
 |-------|---------|-----------|-----------|-----------|
