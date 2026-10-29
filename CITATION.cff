@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use BrainFMBench, please cite the paper below."
+title: "BrainFMBench: a living benchmark for brain structural MRI foundation models"
+type: software
+license: MIT
+repository-code: "https://github.com/epics-lab/BrainFMBench"
+url: "https://www.epics-lab.ca/BrainFMBench/"
+authors:
+  - family-names: Encin
+    given-names: Arel
+  - family-names: Gilmore
+    given-names: Asa
+  - family-names: Rokem
+    given-names: Ariel
+  - family-names: Dickie
+    given-names: Erin
+  - family-names: Glatard
+    given-names: Tristan
+keywords:
+  - benchmark
+  - foundation models
+  - structural MRI
+  - neuroimaging
+preferred-citation:
+  type: article
+  title: "A Comparative Evaluation of Structural MRI Foundation Models for Age, Sex, and Body-Mass Index Predictions"
+  authors:
+    - family-names: Encin
+      given-names: Arel
+    - family-names: Gilmore
+      given-names: Asa
+    - family-names: Rokem
+      given-names: Ariel
+    - family-names: Dickie
+      given-names: Erin
+    - family-names: Glatard
+      given-names: Tristan
+  journal: bioRxiv
+  year: 2026
+  doi: 10.64898/2026.05.15.725427

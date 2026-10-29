@@ -28,36 +28,20 @@ def resample_1mm(t, zooms):
     return F.grid_sample(t, grid, mode="bilinear", padding_mode="border", align_corners=True)
 
 
+EPS = 1e-6
+
+
 def load_volume(path):
     img = nib.load(path)
-    v = img.get_fdata(dtype=np.float32)
-
-    # SignalFillEmptyd equiv
-    v = np.nan_to_num(v, nan=0.0)
-
-    # NormalizeIntensityd equiv
-    for s in v:
-        m = s != 0
-        if m.any():
-            x = s[m]
-            sd = x.std()
-            s[m] = (x - x.mean()) / (sd if sd != 0 else 1.0)
-
-    t = torch.from_numpy(v)[None, None]
-
-    if DO_RESAMPLE:
-        zooms = np.asarray(img.header.get_zooms()[:3], dtype=np.float64)
-        if not np.allclose(zooms, 1.0):
-            t = resample_1mm(t, zooms)
-
-    # Pad with 0 now after z-score
-    # This is done symmetrically like monai
-    pads = []
-    for n in reversed(t.shape[2:]):
-        p = (-n) % PATCH
-        pads += [p // 2, p - p // 2]
-    return F.pad(t, pads, value=0.0)
-
+    assert np.allclose(img.header.get_zooms()[:3], 1.0, atol=1e-3), f"{path} is not 1mm isotropic"
+    v = np.nan_to_num(img.get_fdata().astype(np.float32), nan=0.0)
+    brain = v > v.min() + EPS
+    v[~brain] = 0.0
+    x = v[brain]
+    v[brain] = (x - x.mean()) / (x.std() + EPS)
+    pad = [(-n) % PATCH for n in v.shape]
+    v = np.pad(v, [(q // 2, q - q // 2) for q in pad])
+    return torch.from_numpy(v)[None, None]
 
 
 def extract(input_dir, output_csv, weights_dir):
